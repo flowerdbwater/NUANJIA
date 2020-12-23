@@ -6,11 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".TestActivity">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerview"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+    <com.youth.banner.Banner
+        android:id="@+id/banner"
+        android:layout_width="330dp"
+        android:layout_height="190dp"
+        android:layout_gravity="center_horizontal"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="400dp"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

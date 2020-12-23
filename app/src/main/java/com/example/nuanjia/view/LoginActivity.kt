@@ -1,14 +1,19 @@
 package com.example.nuanjia.view
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
+import android.content.SharedPreferences
 import android.os.Bundle
+import android.view.View
 import android.view.Window
-import android.view.WindowManager
+import android.widget.Toast
+import android.widget.Toast.LENGTH_SHORT
+import androidx.appcompat.app.AppCompatActivity
 import com.example.nuanjia.R
 import kotlinx.android.synthetic.main.activity_login.*
 
+
 class LoginActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -18,9 +23,28 @@ class LoginActivity : AppCompatActivity() {
 
         setContentView(R.layout.activity_login)
 
+        //登录
         login_btn.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
+            if (doValidateForm()) {
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
+            }
         }
     }
+
+    //校验用户字段
+    private fun doValidateForm(): Boolean {
+        var user=user_edt.text.toString();
+        var pwd=password_edt.text.toString();
+        if (user.isEmpty()) {
+            Toast.makeText(this,"用户名不能为空！",LENGTH_SHORT).show()
+            return false
+        } else if (pwd.isEmpty()) {
+            Toast.makeText(this,"密码不能为空！",LENGTH_SHORT).show()
+            return false
+        }
+        return true
+    }
+
 }
+

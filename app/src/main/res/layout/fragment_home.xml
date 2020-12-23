@@ -84,11 +84,10 @@
                 app:layout_constraintTop_toTopOf="parent"/>
 
 
-            <ImageView
-                android:id="@+id/photo"
+            <com.youth.banner.Banner
+                android:id="@+id/banner"
                 android:layout_width="330dp"
                 android:layout_height="190dp"
-                android:background="@drawable/home_show"
                 android:layout_gravity="center_horizontal"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -100,10 +99,12 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 style="?android:attr/borderlessButtonStyle"
+                android:drawableLeft="@drawable/ic_remind"
+                android:paddingLeft="15dp"
                 android:background="@drawable/main_button1"
                 app:layout_constraintEnd_toStartOf="@+id/button2"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/photo"
+                app:layout_constraintTop_toBottomOf="@+id/banner"
                 android:layout_marginTop="20dp" />
 
             <Button
@@ -112,9 +113,11 @@
                 android:layout_height="50dp"
                 style="?android:attr/borderlessButtonStyle"
                 android:background="@drawable/main_button2"
+                android:drawableLeft="@drawable/ic_remind"
+                android:paddingLeft="15dp"
                 app:layout_constraintStart_toEndOf="@+id/button1"
                 app:layout_constraintEnd_toStartOf="@+id/button3"
-                app:layout_constraintTop_toBottomOf="@+id/photo"
+                app:layout_constraintTop_toBottomOf="@+id/banner"
                 android:layout_marginTop="20dp" />
 
             <Button
@@ -123,9 +126,11 @@
                 android:layout_height="50dp"
                 style="?android:attr/borderlessButtonStyle"
                 android:background="@drawable/main_button3"
+                android:drawableLeft="@drawable/ic_remind"
+                android:paddingLeft="15dp"
                 app:layout_constraintStart_toEndOf="@+id/button2"
                 app:layout_constraintEnd_toStartOf="@+id/button4"
-                app:layout_constraintTop_toBottomOf="@+id/photo"
+                app:layout_constraintTop_toBottomOf="@+id/banner"
                 android:layout_marginTop="20dp" />
 
             <Button
@@ -134,9 +139,11 @@
                 android:layout_height="50dp"
                 style="?android:attr/borderlessButtonStyle"
                 android:background="@drawable/main_button4"
+                android:drawableLeft="@drawable/ic_remind"
+                android:paddingLeft="15dp"
                 app:layout_constraintStart_toEndOf="@+id/button3"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/photo"
+                app:layout_constraintTop_toBottomOf="@+id/banner"
                 android:layout_marginTop="20dp" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>

@@ -33,8 +33,8 @@
 <!--        android:layout_marginLeft="20dp"-->
 <!--        android:layout_marginStart="20dp"/>-->
 
-    <com.example.nuanjia.view.home.searchview.EditText_Clear
-        android:id="@+id/edit_text"
+    <com.example.nuanjia.view.home.EditText_Clear
+        android:id="@+id/et_search"
         android:layout_width="310dp"
         android:layout_height="32dp"
         android:background="@null"
@@ -63,7 +63,7 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/edit_text"
+        app:layout_constraintTop_toBottomOf="@+id/et_search"
         app:layout_constraintStart_toStartOf="parent">
 
         <LinearLayout
@@ -71,16 +71,13 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <com.example.nuanjia.view.home.searchview.SearchListView
-                android:id="@+id/listView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
 
             <TextView
                 android:id="@+id/tv_clear"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:background="#F6F6F6"
+                android:textColor="#000"
                 android:gravity="center"
                 android:visibility="invisible"
                 android:text="@string/clearHistory" />

@@ -25,4 +25,13 @@
     <string name="cancel">取消</string>
     <string name="clearHistory">清除搜索历史</string>
 
+    <!-- music-->
+    <string name="button_play">start</string>
+    <string name="button_stop">stop</string>
+    <string name="button_next">next</string>
+    <string name="button_pause">pause</string>
+    <string name="button_prev">prev</string>
+    <string name="loading">loading......</string>
+    <string name="show_notification">show notification</string>
+
 </resources>

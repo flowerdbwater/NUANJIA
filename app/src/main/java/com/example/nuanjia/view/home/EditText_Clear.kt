@@ -1,4 +1,4 @@
-package com.example.nuanjia.view.home.searchview
+package com.example.nuanjia.view.home
 
 import android.content.Context
 import android.graphics.Rect
@@ -9,6 +9,9 @@ import androidx.appcompat.widget.AppCompatEditText
 import com.example.nuanjia.R
 
 
+/**
+ * 自定义左侧搜索图标 & 一键删除图标的输入框
+ */
 open class EditText_Clear : AppCompatEditText {
     /**
      * 步骤1：定义左侧搜索图标 & 一键删除图标

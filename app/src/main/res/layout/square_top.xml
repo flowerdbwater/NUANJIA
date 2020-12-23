@@ -12,7 +12,8 @@
         android:gravity="center"
         android:textColor="@color/white"
         android:background="@color/light_pink"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_margin="0dp"/>
 
     <Button
         android:id="@+id/question_answer"

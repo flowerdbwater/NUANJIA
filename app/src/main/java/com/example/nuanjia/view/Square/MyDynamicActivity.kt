@@ -23,7 +23,7 @@ class MyDynamicActivity : AppCompatActivity() {
 
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE)
         val tool:Tool = Tool()
-        tool.setStatusBarFullTransparent(this)
+        tool.setWindowStatusBarColor(this,R.color.green)
         setContentView(R.layout.activity_my_dynamic)
 
         map["profile_photo"] = R.drawable.profile

@@ -8,11 +8,21 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners
+import com.bumptech.glide.request.RequestOptions
 import com.example.nuanjia.R
+import com.example.nuanjia.model.bean.DataBean
 import com.example.nuanjia.view.RecommendAdapter
 import com.example.nuanjia.view.home.CalendarActivity
+import com.example.nuanjia.view.home.MusicActivity
 import com.example.nuanjia.view.home.SearchActivity
+import com.youth.banner.Banner
+import com.youth.banner.adapter.BannerImageAdapter
+import com.youth.banner.holder.BannerImageHolder
+import com.youth.banner.indicator.CircleIndicator
 import kotlinx.android.synthetic.main.fragment_home.*
+import kotlinx.android.synthetic.main.fragment_home.view.*
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -43,7 +53,6 @@ class HomeFragment : Fragment() {
         }
     }
 
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -54,6 +63,25 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        //轮播图
+        val banner: Banner<DataBean, BannerImageAdapter<DataBean>> = view.findViewById(R.id.banner)
+
+        banner.setAdapter(object : BannerImageAdapter<DataBean>(DataBean.testData3) {
+            override fun onBindView(
+                holder: BannerImageHolder,
+                data: DataBean,
+                position: Int,
+                size: Int
+            ) {
+                //图片加载自己实现
+                Glide.with(holder.itemView)
+                    .load(data.imageUrl)
+                    .apply(RequestOptions.bitmapTransform(RoundedCorners(30)))
+                    .into(holder.imageView)
+            }
+        }).addBannerLifecycleObserver(this).indicator = CircleIndicator(this.activity)
+
 
         //搜索
         search.setOnClickListener {
@@ -66,6 +94,14 @@ class HomeFragment : Fragment() {
             val intent = Intent(activity, CalendarActivity::class.java)
             startActivity(intent)
         }
+
+        //音乐
+        button2.setOnClickListener {
+            val intent = Intent(activity,MusicActivity::class.java)
+            startActivity(intent)
+        }
+
+
 
         initRecommend()
         val layoutManager = StaggeredGridLayoutManager(3, StaggeredGridLayoutManager.VERTICAL)
