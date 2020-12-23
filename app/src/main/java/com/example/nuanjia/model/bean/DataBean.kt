@@ -30,7 +30,7 @@ class DataBean {
                 val list: MutableList<DataBean> = ArrayList()
                 list.add(
                     DataBean(
-                        drawable.home_show,
+                        "https://img.zcool.cn/community/01639a56fb62ff6ac725794891960d.jpg",
                         null,
                         1
                     )
